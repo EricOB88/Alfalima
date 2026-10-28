@@ -22,7 +22,10 @@ Aplicación web progresiva (PWA) de consulta rápida sobre facultades, límites 
 ├── index.html      # Interfaz, estilos y contenido (arreglo D)
 ├── sw.js           # Service worker (caché offline)
 ├── manifest.json   # Datos de instalación de la PWA
-├── icon.svg        # Ícono de la app
+├── icon.svg        # Ícono vectorial
+├── icon-192.png    # Ícono PNG 192x192 (purpose any)
+├── icon-512.png    # Ícono PNG 512x512 (purpose any)
+├── icon-maskable-512.png  # Ícono PNG adaptable (maskable)
 └── README.md
 ```
 
