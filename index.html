@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="manifest" href="manifest.json"><link rel="icon" href="icon.svg"><meta name="theme-color" content="#0b3d6e">
+<title>Guía Legal Policial · Costa Rica</title>
+<style>
+:root{--bg:#f4f6f9;--card:#fff;--tx:#14202e;--mu:#5b6b7d;--ac:#0b3d6e;--ok:#14733c;--ko:#b3261e;--wa:#8a5a00;--bd:#d7dee6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1620;--card:#17222f;--tx:#e6edf5;--mu:#93a4b8;--ac:#7db4ec;--ok:#6fd49a;--ko:#ff8f87;--wa:#f0c36a;--bd:#2a3a4c;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0e1620;--card:#17222f;--tx:#e6edf5;--mu:#93a4b8;--ac:#7db4ec;--ok:#6fd49a;--ko:#ff8f87;--wa:#f0c36a;--bd:#2a3a4c;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{background:var(--ac);color:#fff;padding:12px 14px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) header{background:#12304f;color:#e6edf5}}
+header h1{margin:0;font-size:18px}header p{margin:2px 0 0;font-size:12px;opacity:.85}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--bd)}
+.bar input{width:calc(100% - 20px);margin:8px 10px 4px;padding:9px 12px;border:1px solid var(--bd);border-radius:10px;background:var(--card);color:var(--tx);font-size:15px}
+.tabs{display:flex;gap:6px;overflow-x:auto;padding:4px 10px 8px;scrollbar-width:thin}
+.tabs button{flex:none;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:7px 12px;border-radius:999px;font-size:13px;cursor:pointer}
+.tabs button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tabs button.on{color:#0e1620}}
+main{max-width:760px;margin:0 auto;padding:12px 12px 40px}
+.warn{background:var(--card);border-left:4px solid var(--wa);padding:10px 12px;border-radius:8px;font-size:13px;color:var(--mu);margin-bottom:12px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:12px 14px;margin:0 0 12px}
+.card h2{margin:0 0 2px;font-size:17px;color:var(--ac)}.card .sub{color:var(--mu);font-size:13px;margin:0 0 8px}
+details{border-top:1px solid var(--bd);padding:8px 0}details:first-of-type{border-top:0}
+summary{cursor:pointer;font-weight:600;font-size:15px}
+h3{font-size:13px;text-transform:uppercase;letter-spacing:.04em;margin:10px 0 4px}
+.p h3{color:var(--ok)}.n h3{color:var(--ko)}.s h3{color:var(--ac)}.b h3{color:var(--mu)}
+ul,ol{margin:0;padding-left:20px}li{margin:2px 0}
+.tag{display:inline-block;font-size:12px;background:var(--bg);border:1px solid var(--bd);border-radius:6px;padding:1px 7px;margin:2px 4px 2px 0;color:var(--mu)}
+.lk{font-size:13px;margin:10px 0 0}.lk a{color:var(--ac)}.empty{text-align:center;color:var(--mu);padding:30px 0}
+</style></head><body>
+<header><h1>Guía Legal Policial · Costa Rica</h1><p>Facultades, límites y protocolos de intervención por ley</p></header>
+<div class="bar"><input id="q" type="search" placeholder="Buscar: flagrancia, allanamiento, droga…" aria-label="Buscar"><nav class="tabs" id="tabs"></nav></div>
+<main>
+<div class="warn"><b>Aviso:</b> material de consulta rápida y apoyo educativo; no sustituye el texto oficial de las leyes, los protocolos institucionales vigentes ni la asesoría legal o del Ministerio Público. Verifique siempre el artículo vigente en el SCIJ (pgrweb.go.cr) y las directrices de su institución. Los puntos marcados «verificar» requieren confirmar el número de artículo.</div>
+<div id="out"></div>
+</main>
+<script>
+var SC="https://www.pgrweb.go.cr/scij/";
+function I(h,b,p,n,s){return{h:h,base:b,p:p,n:n,s:s}}
+var D=[
+{id:"cons",t:"Constitución",u:SC,ul:"Constitución Política (SCIJ)",sub:"Garantías que limitan toda actuación policial",items:[
+I("Legalidad y libertad (Arts. 11, 20, 28)",["Const. Arts. 11, 20 y 28"],["Actuar solo con la facultad que la ley les otorga expresamente (Art. 11 rige a los funcionarios públicos)."],["Restringir la libertad sin base legal.","Perseguir a alguien por un acto que no infringe la ley."],["Citar en el parte la norma que justifica cada actuación."]),
+I("Domicilio (Art. 23) y comunicaciones (Art. 24)",["Const. Art. 23 (domicilio)","Const. Art. 24 (comunicaciones y documentos privados)","Ley 7425"],["Ingresar con orden escrita de juez, o sin ella para impedir la comisión o impunidad de delitos o evitar daños graves a personas o propiedad (Art. 23)."],["Revisar celulares, mensajes o documentos privados sin orden judicial o consentimiento válido (Art. 24).","Ingresar a una vivienda por sospecha vaga."],["Nota: el domicilio lo protege el Art. 23; el Art. 24 protege comunicaciones y documentos.","Documentar la causa del ingreso; resguardar equipos en cadena de custodia."]),
+I("Detenido y trato digno (Arts. 36, 37, 40)",["Const. Arts. 36, 37 y 40"],["Aprehender con indicio comprobado y orden de juez/autoridad, o sin orden a quien sea sorprendido en flagrancia o a un reo prófugo."],["Detener por mera sospecha.","Obligar a declarar o usar tratos crueles o degradantes.","Retener más de 24 h sin ponerlo a la orden de la autoridad judicial."],["Informar motivo y derechos (silencio, abogado, avisar a un familiar).","Atender lesiones y registrar hora y lugar."])]},
+{id:"psi",t:"Ley 8204",u:SC,ul:"Ley 8204 (SCIJ)",sub:"Estupefacientes, psicotrópicos y legitimación de capitales",items:[
+I("Consumo vs. tráfico",["Ley 8204","Ley General de Salud 5395","Verificar artículos de tráfico y tenencia en SCIJ"],["Decomisar la sustancia hallada lícitamente.","Aprehender en flagrancia con indicios de venta, distribución o tráfico."],["Detener por consumo personal como si fuera tráfico.","Alterar cantidades o sembrar evidencia.","Registrar vivienda sin orden fuera de las excepciones del Art. 23."],["Documentar cantidad, embalaje, forma de dosificación, dinero y otros indicios objetivos.","Prueba de campo: orientativa; la pericia la hace el laboratorio oficial."]),
+I("Requisa, decomiso y cadena de custodia",["Ley 8204","Código Procesal Penal 7594"],["Requisar con motivos objetivos y razonables.","Asegurar y embalar la evidencia."],["Requisas masivas o humillantes.","Quedarse con dinero o bienes."],["1. Explicar el motivo.","2. Fotografiar el hallazgo.","3. Pesar y embalar con testigos.","4. Registrar quién custodia cada paso.","5. Entregar con acta al Ministerio Público."])]},
+{id:"vif",t:"VIFA 7586",u:SC,ul:"Ley 7586 (SCIJ)",sub:"Ley contra la Violencia Doméstica",items:[
+I("Protocolo de intervención",["Ley 7586","Const. Art. 23 (daño grave a personas)","Verificar protocolo vigente del MSP/Poder Judicial"],["Ingresar sin orden ante auxilio o riesgo grave (Art. 23, no Art. 24).","Aprehender en flagrancia.","Ejecutar medidas de protección vigentes."],["Mediar o conciliar.","Minimizar el hecho como asunto privado.","Revictimizar."],["1. Asegurar la escena.","2. Separar y entrevistar por separado.","3. Solicitar ambulancia si hay lesiones.","4. Verificar medidas vigentes.","5. Aprehender en flagrancia.","6. Informar a la víctima sobre denuncia y apoyo (911, INAMU, Poder Judicial).","7. Atender a menores presentes y avisar al PANI.","8. Remitir parte policial completo."])]},
+{id:"muj",t:"Ley 8589",u:SC,ul:"Ley 8589 (SCIJ)",sub:"Penalización de la Violencia contra las Mujeres (no es Ley 8586)",items:[
+I("Delitos, flagrancia y protección",["Ley 8589","Verificar artículos de cada delito"],["Aprehender en flagrancia por los delitos tipificados.","Resguardar a la víctima y la evidencia."],["Desestimar el hecho por la relación entre las partes.","Presionar a la víctima para retirar la denuncia."],["Identificar el delito (violencia física, psicológica, sexual, patrimonial, femicidio).","Documentar lesiones y declaraciones.","Remitir al Ministerio Público; coordinar medidas de protección."])]},
+{id:"cpp",t:"Proc. Penal",u:SC,ul:"Código Procesal Penal 7594 (SCIJ)",sub:"Código Procesal Penal 7594",items:[
+I("Flagrancia y aprehensión",["CPP 7594: aprehensión sin orden (usted cita Art. 236; verificar)","Const. Art. 37"],["Aprehender a quien sea sorprendido cometiendo el delito o inmediatamente después."],["Aprehender por hechos pasados sin orden.","Usar esposas o fuerza innecesarias."],["Asegurar escena, leer derechos, redactar el parte y trasladar a la autoridad en plazo."]),
+I("Requisa y registro sin orden",["CPP 7594 (usted cita Arts. 185 y 189; verificar)"],["Requisar con motivos suficientes y razonables."],["Requisa íntima sin orden o sin personal idóneo."],["Explicar el motivo, requisa por personal del mismo sexo cuando sea posible, documentar el motivo objetivo."]),
+I("Uso de la fuerza",["Ley 7410 Art. 10","Principios Básicos ONU (1990)","Manual del MSP vigente"],["Aplicar fuerza gradual: presencia, verbalización, control físico, medios no letales y letal solo ante amenaza inminente de muerte o lesión grave."],["Usar fuerza como castigo.","Disparar contra quien huye sin amenaza inminente."],["Advertir cuando sea posible; auxiliar a heridos; reportar por escrito."])]},
+{id:"arm",t:"Ley 7530",u:SC,ul:"Ley 7530 (SCIJ)",sub:"Armas y Explosivos",items:[
+I("Portación y decomiso",["Ley 7530 (verificar artículos de portación y decomiso)"],["Verificar permiso y registro; decomisar si es irregular."],["Manipular el arma sin seguridad.","Quedarse con ella sin cadena de custodia."],["Descargar y asegurar; anotar marca, serie y calibre; entregar con acta."])]},
+{id:"tra",t:"Ley 9078",u:SC,ul:"Ley 9078 (SCIJ)",sub:"Tránsito por Vías Públicas Terrestres",items:[
+I("Intervenciones viales",["Ley 9078 (verificar competencia de la Policía de Tránsito y la colaboración de Fuerza Pública)"],["Detener vehículos por infracciones o control, dentro de su competencia.","Aplicar el alcotest según protocolo y competencia."],["Retener vehículo o licencia sin motivo legal.","Detener por infracciones menores con fuerza."],["Identificarse, explicar el motivo, documentar y dar copia.","Verificar límites y sanciones de alcohol en el texto vigente."])]},
+{id:"ani",t:"Ley 7451",u:SC,ul:"Ley 7451 y reforma 9458 (SCIJ)",sub:"Bienestar de los Animales",items:[
+I("Maltrato y rescate",["Ley 7451, reforma 9458","SENASA"],["Intervenir en maltrato flagrante y asegurar al animal en peligro inminente."],["Ingresar a vivienda sin urgencia ni orden.","Disponer del animal sin autoridad veterinaria."],["Fotografiar, recoger testigos, avisar a SENASA y al Ministerio Público."])]},
+{id:"tab",t:"Ley 9028",u:SC,ul:"Ley 9028 (SCIJ)",sub:"Control del Tabaco",items:[
+I("Consumo y venta",["Ley 9028 y reglamento (verificar)","Ministerio de Salud"],["Apoyar a Salud y exigir el cese del consumo donde esté prohibido."],["Detener o decomisar sin base legal."],["Documentar lugar, hora y conducta; remitir reporte a Salud."])]},
+{id:"otr",t:"Otras",u:SC,ul:"Ley 7410 y Ley 7576 (SCIJ)",sub:"Ley 7410, Ley 7576 y uso de la fuerza",items:[
+I("Ley General de Policía 7410",["Ley 7410 Arts. 4 a 10"],["Vigilar y conservar el orden público; actuar con legalidad, necesidad y proporcionalidad."],["Actuar sin competencia legal o discriminar."],["Identificarse, redactar el parte con hechos objetivos."]),
+I("Menores (Ley 7576 y Código 7739)",["Ley 7576","Código de Niñez 7739"],["Aprehender en flagrancia a adolescentes de 12 a 17 años conforme a la ley penal juvenil."],["Detener junto a adultos.","Exhibir identidad o interrogar sin responsable o defensor."],["Avisar a padres, PANI y autoridad competente; trato diferenciado."])]}
+];
+var cur="cons",tabs=document.getElementById("tabs"),out=document.getElementById("out"),q=document.getElementById("q");
+function esc(s){return s.replace(/[&<>]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})}
+function li(a,o){return a&&a.length?"<ul>"+a.map(function(x){return"<li>"+esc(x)+"</li>"}).join("")+"</ul>":""}
+function block(c,t,a,ord){return a&&a.length?'<div class="'+c+'"><h3>'+t+"</h3>"+(ord?"<ul>":"<ul>")+a.map(function(x){return"<li>"+esc(x)+"</li>"}).join("")+"</ul></div>":""}
+function item(i,open){return"<details"+(open?" open":"")+"><summary>"+esc(i.h)+"</summary>"+
+block("p","Puede / debe",i.p)+block("n","No puede",i.n)+block("s","Pasos y buenas prácticas",i.s)+
+'<div class="b"><h3>Base legal</h3>'+i.base.map(function(b){return'<span class="tag">'+esc(b)+"</span>"}).join("")+"</div></details>"}
+function render(){
+ var t=q.value.trim().toLowerCase(),h="";
+ tabs.innerHTML=D.map(function(l){return'<button class="'+(l.id===cur&&!t?"on":"")+'" data-id="'+l.id+'">'+esc(l.t)+"</button>"}).join("");
+ var list=t?D:D.filter(function(l){return l.id===cur});
+ list.forEach(function(l){
+  var its=l.items.filter(function(i){return !t||JSON.stringify([l.t,l.sub,i]).toLowerCase().indexOf(t)>-1});
+  if(!its.length)return;
+  h+='<section class="card"><h2>'+esc(l.t)+'</h2><p class="sub">'+esc(l.sub)+"</p>"+its.map(function(i){return item(i,!!t||its.length===1)}).join("")+'<p class="lk"><a href="'+l.u+'" target="_blank" rel="noopener">Fuente oficial: '+esc(l.ul)+" ↗</a> (busque por número de ley)</p></section>";
+ });
+ out.innerHTML=h||'<p class="empty">Sin resultados.</p>';
+}
+tabs.addEventListener("click",function(e){var b=e.target.closest("button");if(b){cur=b.dataset.id;q.value="";render();window.scrollTo(0,0)}});
+q.addEventListener("input",render);
+render();
+if("serviceWorker"in navigator)navigator.serviceWorker.register("sw.js");
+</script></body></html>
